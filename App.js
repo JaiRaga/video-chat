@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, StatusBar as rnStatusBar } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
+import Navigator from './navigation';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomeScreen />
-      <StatusBar />
+      <Navigator />
+      <StatusBar backgroundColor='#1e1e1e' style="light" />
     </View>
   );
 }
