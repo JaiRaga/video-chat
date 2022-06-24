@@ -5,7 +5,7 @@ import Searchbar from '../components/Searchbar';
 import MenuButtons from '../components/MenuButtons';
 import ContactsMenu from '../components/ContactsMenu';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header />
@@ -21,7 +21,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1e1e1e",
-    padding: 5
-  }
+    backgroundColor: '#1e1e1e',
+    padding: 5,
+  },
 });
