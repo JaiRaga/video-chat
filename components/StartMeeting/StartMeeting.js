@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './styles';
 
-const StartMeeting = ({name, roomId, setName, setRoomId}) => {
+const StartMeeting = ({name, roomId, setName, setRoomId, joinRoom}) => {
   return (
     <View style={styles.inputContainer}>
       <View style={styles.info}>
@@ -25,7 +25,7 @@ const StartMeeting = ({name, roomId, setName, setRoomId}) => {
         />
       </View>
       <View style={styles.btnContainer}>
-        <TouchableOpacity onPress={() => {}} style={styles.meetingBtn}>
+        <TouchableOpacity onPress={() => joinRoom()} style={styles.meetingBtn}>
           <Text style={styles.meetingBtnText}>Start Meeting</Text>
         </TouchableOpacity>
       </View>
