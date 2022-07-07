@@ -12,6 +12,7 @@ import { Camera } from 'expo-camera';
 import { FontAwesome } from '@expo/vector-icons';
 import StartMeeting from '../components/StartMeeting';
 import { API_URL } from '../constants/api';
+import Chat from '../components/Chat';
 
 let socket;
 
@@ -26,10 +27,7 @@ const MeetingsScreen = () => {
   const [hasConnection, setConnection] = useState(false);
   const [name, setName] = useState('');
   const [roomId, setRoomId] = useState('');
-  const [activeUsers, setActiveUsers] = useState([
-    // { userName: 'Pattu Amma' },
-    // { userName: 'Ram Pappa' },
-  ]);
+  const [activeUsers, setActiveUsers] = useState([]);
   const [startCamera, setStartCamera] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -78,7 +76,12 @@ const MeetingsScreen = () => {
             onRequestClose={() => {
               setModalVisible(!modalVisible);
             }}
-          ></Modal>
+          >
+            <Chat
+              modalVisible={modalVisible}
+              setModalVisible={setModalVisible}
+            />
+          </Modal>
           {/* Active Users section */}
           <View style={styles.activeUsersContainer}>
             {/* camera container */}
